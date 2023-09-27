@@ -3,30 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Resume</title>
     <style>
-        .container{
-            background-color: lightblue;
-            display: flex;
-            flex-direction: column;
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+        html{
+            background-image: url("https://e0.pxfuel.com/wallpapers/586/710/desktop-wallpaper-dark-vaporwave-black-vaporwave-thumbnail.jpg");
+            background-color: black;
         }
-        h1, p{
+        h1, h2, h3, h4, h5, h6, p{
+            color: white;
             text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            list-style-position: inside;
+        }
+        ul, li{
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .contactinfo{
+            width: 25%;
+        }
+        .main{
+            width: 50%;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>LIWAG, Johann Sebastian Philip V.</h1>
-        <hr><p>CIT14 - 2G Group B</p><hr>
+        <hr><h3>Junior Web Developer</h3><hr>
     </header>
     <main>
         <div class="container">
             <div class="contactinfo">
-                asdasd
+                <h3><strong>CONTACT ME:</strong></h3>
+                <div style="text-align: left; margin-left: 20%;">
+                    <ul>
+                        <li>0923-424-2847</li>
+                        <li>jvl2997@students.uc-bcf.edu.ph</li>
+                        <li>Aurora Hill, Baguio City</li>
+                    </ul>
+                </div><br><br>
+                <h3>
+                    <div style="text-align: left; margin-left: 20%;">
+                        <ul>
+                            <li>Python</li>
+                            <li>Data Structures & Algorithms</li>
+                        </ul>
+                    </div>
+                </h3>
+                <h3>TECHNICAL SKILLS
+                    <div style="text-align: left; margin-left: 20%;">
+                        <ul>
+                            <li>Python</li>
+                            <li>Data Structures & Algorithms</li>
+                        </ul>
+                    </div>
+                </h3>
             </div>
             <div class="main">
-                asdasd
+                <h2>SUMMARY</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi labore suscipit amet quo dignissimos esse praesentium rerum nemo tenetur, distinctio molestias accusamus commodi. Cum, impedit ipsam accusantium quis voluptates inventore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit fugit veniam aliquam atque vitae enim? Atque illum quo nihil magnam sunt, aut eaque vel accusantium itaque iste officia corporis ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam labore error illo accusantium, asperiores optio! Id velit eligendi ipsam accusantium inventore, aliquam tempora, a vero ab ullam eum ipsa.
+                </p><br>
+                <h2>EDUCATION</h2>
+                <h5>UNIVERSITY OF THE CORDILLERAS, BAGUIO CITY, BENGUET <br><small>2022-Present</small></h5>
+                <h5>HONORATO C. PEREZ Sr. MEMORIAL SCIENCE HIGH SCHOOL, CABANATUAN CITY, NUEVA ECIJA <br><small>2016-2022</small></h5><hr>
+                <h2>EXPERIENCE</h2>
             </div>
         </div>
     </main>
