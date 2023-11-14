@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe  Biden?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="survey-header">
+            <h1 id="title">Joe Biden Survey Form</h1>
+            <p id="description">Listen up soldier, you're getting drafted into the army so you better be honest.</p>
+        </div>
+        <form action="" id="survey-form">
+            <div class="form-bg">
+                <div class="part-1">
+                    <label for="name" id="name-label">Name</label>
+                    <input type="text"
+                            name="name"
+                            id="name"
+                            placeholder="  Name  NOW"
+                            required>
+                    <label for="email" id="email-label">E-mail</label>
+                    <input type="email"
+                            name="email"
+                            id="email"
+                            placeholder="  E-mail  NOW"
+                            required>
+                    <label for="number" id="number-label">Age</label>
+                    <input type="number"
+                            name="number"
+                            id="number"
+                            min="0"
+                            max="60723"
+                            placeholder="  Age NOW"
+                            required>
+                </div>
+                <div class="part-2">
+                    <label for="language">Better Language?</label><br>
+                    <select name="language" id="dropdown">
+                        <option value="">Choose Wisely...</option>
+                        <option value="python">Python (divine)</option>
+                        <option value="java">Java (ew)</option>
+                    </select>
+                    
+                    <p>IDE?</p>
+                    <input type="radio" name="ide" id="vscode" value="vscode">
+                    <label for="ide">VS Code</label>
+
+                    <input type="radio" name="ide" id="jetbrains" value="jetbrains">
+                    <label for="ide">JetBrains</label><br>
+
+                    <p>Which End?</p>
+                    <input type="checkbox" name="frontend" id="frontend" value="frontend">
+                    <label for="frontend">Frontend</label>
+                    <input type="checkbox" name="backend" id="backend" value="backend">
+                    <label for="backend">Backend</label>
+                </div>
+                <div class="part-3">
+                    <textarea name="" 
+                              id="" 
+                              cols="30" 
+                              rows="10"
+                              placeholder="Enter comments if there are any(optional)."></textarea><br>
+                            </div>
+                        </div>
+            <input type="submit" id="submit">Submit</input>
+        </form>
+    </div>
+</body>
+</html>
