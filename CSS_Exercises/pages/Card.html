@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+        *{font-family: 'Andika', sans-serif;}
+        h1, h2, h3, h4, p{text-align: center;}
+        h1{font-size: 3em;}
+        .cards{
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+
+            cursor: grab;
+        }
+        .card {
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 300px;
+            border: 1px solid #000;
+            background-color: white;
+            border-radius: 5px;
+            padding-top: 10px;
+            margin: 0 10px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: .2s;
+        }
+        .card:hover{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            animation: zoom 900ms forwards;
+        }
+        .card img{
+            background-color: white;
+            width: 80%;
+            height: auto;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+        .emote{
+            height: 75%;
+            display: grid;
+            place-items: center;
+        }
+        .description {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 2px 15px;
+            background-color: #dedede;
+            border-radius: 0 0 5px 5px ;
+            border-top: 1px solid #000;
+        }
+        @keyframes zoom {
+            from {transform: rotate(0deg) scale(1);}
+            to {transform: rotate(720deg) scale(1.3);}
+        }
+    </style>
+</head>
+<body>
+    <h1>Card Layout</h1>
+    <h2>Twitch Emotes</h2>
+    <div class="cards" id="cards">
+        <div class="card PogU">
+            <div class="emote">
+                <img src="https://cdn.frankerfacez.com/avatar/twitch/404310126" alt="PogU">
+            </div>
+            <div class="description">
+                <h3><b>Emote 1</b></h3>
+                <p>PogU</p>
+            </div>
+        </div>
+        <div class="card om">
+            <div class="emote">
+                <img src="https://cdn.7tv.app/emote/6134399dc4f7af1441002aef/4x.webp" alt="om">
+            </div>
+            <div class="description">
+                <h3><b>Emote 2</b></h3>
+                <p>om</p>
+            </div>
+        </div>
+        <div class="card COPIUM">
+            <div class="emote"><img src="https://gumlet.assettype.com/afkgaming%2F2021-08%2F79649079-d0e7-4acd-853b-6a2b92797da3%2Fcopium_png.png?auto=format%2Ccompress&dpr=1.0&w=1200" alt=""></div>
+            <div class="description">
+                <h3><b>Emote 3</b></h3>
+                <p>COPIUM</p>
+            </div>
+        </div>
+        <div class="card KEKWait">
+            <div class="emote"><img src="https://cdn.7tv.app/emote/60aef2b6361b0164e690f782/4x.webp" alt=""></div>
+            <div class="description">
+                <h3><b>Emote 4</b></h3>
+                <p>KEKWait</p>
+            </div>
+        </div>
+        <div class="card 5head">
+            <div class="emote"><img src="https://www.streamscheme.com/wp-content/uploads/2020/08/5Head-Emote.png" alt=""></div>
+            <div class="description">
+                <h3><b>Emote 5</b></h3>
+                <p>5Head</p>
+            </div>
+        </div>
+</body>
+</html>

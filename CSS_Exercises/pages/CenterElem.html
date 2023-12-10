@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Elements</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+        *{font-family: 'Andika', sans-serif;}
+        h1{text-align: center;}
+        main{
+            height: 90vh;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #container{
+            height: 70%;
+            width: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #draggable{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            left: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            cursor: grab;
+            padding: 0;
+        }
+        #draggable img{
+            height: 150%;
+            width: auto;
+            position: absolute;
+            pointer-events: none;
+            border-radius: 30px;
+        }
+        p{
+            position: absolute;
+            top: 80%;
+            font-size: 1.3em;
+            padding: 10px;
+        }
+        button{
+            border: none;
+            padding: 15px;
+            border-radius: 35px;
+            width: 10%;
+            background-color: #4fafdb;
+            color: white;
+            font-size: 15px;
+            margin: auto;
+        }
+        button:hover{
+            background-color: #308db8;
+        }
+        *.unselectable {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .img-spin{
+            animation-name: spin;
+            animation-duration: 900ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes spin {
+            from {transform:rotate(0deg);}
+            to {transform:rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Centered Elements</h1>
+        <div id="container">
+            <div id="draggable">
+                <img src="https://www.streamscheme.com/wp-content/uploads/2022/02/pausechamp-600.png" id="img-src" class="unselectable">
+            </div>
+            <p>Drag the Pog around!</p>
+        </div>
+        <button onclick="placeCenter()">Place on Center</button>
+    </main>
+    <script>
+        let draggable = document.getElementById('draggable');
+        let img = document.getElementById('img-src');
+        let offsetX, offsetY, afkInterval;
+        let afk = false;
+
+        const events = [
+            "mousedown", "mouseup", "mousemove", "click", "dbclick",
+            "touchstart", "touchmove", "touchend",
+            "focus", "blur", "resize", "scroll",
+            "keydown", "keypress", "keyup"
+        ];
+
+        function placeCenter(){
+            draggable.style.top = "30%";
+            draggable.style.left = "45%";
+        }
+        function resetAFKtimer() {
+            clearInterval(afkInterval);
+            afkInterval = setInterval(() => {
+                afk = true;
+                img.classList.add('img-spin');
+            }, 10000);
+        }
+        function resetAFKdetection(){
+            afk = false;
+            img.classList.remove('img-spin');
+            resetAFKtimer();
+        }
+        const move = (e) => {
+            draggable.style.top = `${e.clientY - offsetY}px`;
+            draggable.style.left = `${e.clientX - offsetX}px`;
+            
+            resetAFKtimer();
+        }
+        draggable.addEventListener("mousedown", (e) => {
+            afk = false;
+            if (!afk){img.classList.remove('img-spin');}
+            
+            offsetX = e.clientX - draggable.offsetLeft;
+            offsetY = e.clientY - draggable.offsetTop;
+            
+            img.src = "https://www.streamscheme.com/wp-content/uploads/2020/04/Pogchamp.png";
+            img.style.height = "190%";
+            img.style.width = "auto";
+            
+            document.addEventListener("mousemove", move);
+        });
+        draggable.addEventListener("mouseup", () => {
+            img.style.height = "150%";
+            img.style.width = "auto";
+            img.src = "https://www.streamscheme.com/wp-content/uploads/2022/02/pausechamp-600.png";
+            
+            document.removeEventListener("mousemove", move);
+            resetAFKtimer();
+        });
+
+        for(let i = 0; i < events.length; i++)
+            document.addEventListener(events[i], resetAFKdetection);
+
+        resetAFKtimer();
+        </script>
+</body>
+</html> 

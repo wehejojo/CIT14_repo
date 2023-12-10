@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Exercies</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">CSS Exercises</h1>
+        <nav>
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#box">Box Models</a></li>
+                <li><a href="#center">Centering Elements</a></li>
+                <li><a href="#card">Card Layout</a></li>
+            </ul>
+        </nav>
+        <button id="refButton">REFERENCE</button>
+    </header>
+    <main>
+        <section id="home">
+            <h1>W E L C O M E</h1>
+            <div class="home-desc">
+                <h3>In this website, we will showcase different ways to apply CSS properties</h3><br>
+                <h4>DISCLAIMER:</h4>
+                <p>Multiple exercises are combined into one page so that there aren't too many pages.</p>
+            </div>
+            <button id="continue">Continue</button>
+        </section>
+        <section id="box">
+            <div class="container">
+                <div class="preview">
+                    <pre>
+<code>
+    .mode-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .mode-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        place-items: center;
+    }
+</code>
+                    </pre>
+                </div>
+                <div class="desc">
+                    <h3>Box Models and Display Layout Types</h3>
+                    <button id="boxButton">Visit</button>
+                </div>
+            </div>
+        </section>
+        <section id="center">
+            <div class="container">
+                <div class="preview">
+                    <pre>
+<code>
+    #draggable{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 30%;
+        left: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        cursor: grab;
+        padding: 0;
+    }
+</code>
+                    </pre>
+                </div>
+                <div class="desc">
+                    <h3>Interactive Simulation of Centered Elements</h3>
+                    <button id="boxButton">Visit</button>
+                </div>
+            </div>
+        </section>
+        <section id="card">
+            <div class="container">
+                <div class="preview">
+                    <pre>
+<code>
+    .card {
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 300px;
+        border: 1px solid #000;
+        background-color: white;
+        border-radius: 5px;
+        padding-top: 10px;
+        margin: 0 10px;
+        display: grid;
+        place-items: center;
+        transition: .2s;
+    }
+    .card:hover{
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        animation: zoom 900ms forwards;
+    }
+</code>
+                    </pre>
+                </div>
+                <div class="desc">
+                    <h3>Utilization of Card Layouts and Hover Selector</h3>
+                    <button id="boxButton">Visit</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

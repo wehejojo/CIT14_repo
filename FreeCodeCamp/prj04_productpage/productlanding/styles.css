@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+#nav-bar{
+    position: fixed;
+    top: 0;
+}
+@media (min-width: 1px){
+    html{
+        background-color: white;
+    }
+}

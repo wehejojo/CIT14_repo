@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Models</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+        *{font-family: 'Andika', sans-serif;}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+        p{
+            text-align-last: center;
+            font-size: 25px;
+        }
+        h1{
+            position: relative;
+            bottom: 20px;
+        }
+        .wrapper{
+            position: relative;
+            bottom: 40px;
+            height: 30em;
+            width: 55em;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .container {
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+        .mode-flex, .mode-grid{
+            width: 29.8em;
+        }
+        .mode-flex {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .mode-grid{
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 10px;
+            place-items: center;
+        }
+        .mode-flex div, .mode-grid div {
+            height: 100px;
+            width: 100px;
+            background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDE0djI5M3R3emUwYzJqeXhtMTNuZGx2bTNlMHBxZDlhazMwMXF6dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TNwX48Ear64uWmN7t3/giphy.gif");
+            background-size: cover;
+            border: 1px solid #333;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .mode-flex div{
+            margin: 29px;
+        }
+        .mode-grid div{
+            margin: 15px;
+        }
+        .footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 120px;
+            height: 50px;
+            border-radius: 30px;
+            border: 1px solid black;
+        }
+        button:hover{
+            background-color: #dedede;
+        }
+    </style>
+</head>
+<body>
+    <h1>Different Types of Box Model Display Types</h1>
+    <div class="wrapper">
+        <article class="container">
+            <div class="mode-flex" style="display: flex;">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+            <div class="mode-grid" style="display: none;">
+                <div class="box1a"></div>
+                <div class="box1"></div>
+                <div class="box1b"></div>
+                <div class="box2a"></div>
+                <div class="box2"></div>
+                <div class="box2b"></div>
+                <div class="box3a"></div>
+                <div class="box3"></div>
+                <div class="box3b"></div>
+            </div>
+        </article>
+        <article class="footer">
+            <p>Toggle Display Mode</p>
+            <button>FLEX</button>
+        </article>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modeFlex = document.querySelector('.mode-flex');
+            const modeGrid = document.querySelector('.mode-grid');
+            const toggleButton = document.querySelector('button');
+
+            toggleButton.addEventListener("click", () => {
+                if (modeFlex.style.display === 'flex') {
+                    modeFlex.style.display = 'none';
+                    modeGrid.style.display = 'grid';
+                    toggleButton.textContent = 'GRID';
+                } else {
+                    modeFlex.style.display = 'flex';
+                    modeGrid.style.display = 'none';
+                    toggleButton.textContent = 'FLEX';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
