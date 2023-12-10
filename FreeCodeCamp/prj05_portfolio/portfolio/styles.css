@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0;
+    font-family: 'Catamaran', sans-serif;
+    color: #fff;
+
+    scroll-behavior: smooth;
+    scroll-padding: 5rem;
+}
+html{
+    background-image: url("imgs/1132524.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    filter: brightness(0.85);
+
+    margin: 0;
+}
+html, body{
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    padding: 10px;
+    background-color: #5c3f36;
+    height: 10vh;
+}
+main{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header, main, footer{
+    width: 100%;
+}
+header h1{
+    font-size: 2.5em;
+}
+header a{
+    font-size: 1.2em;
+}
+section{
+    /* flex: 1; */
+    overflow-y: auto;
+}
+.links li{
+    list-style: none;
+    display: inline-block;
+}
+.links li a {
+    padding: 0px 20px;
+    text-decoration: none;
+}
+#welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 600px;
+}
+#welcome h1, #welcome h2{
+    text-align: center;
+}
+#welcome h1{
+    font-size: 6em;
+    opacity: 0;
+
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+#welcome h2{
+    font-size: 1.7em;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+}
+#welcome button{
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 4s;
+}
+button{
+    background-color: #5c3f36;
+    border: none;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 200px;
+}
+button:hover{
+    filter: brightness(0.6);
+}
+#projects .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    height: 80%;
+}
+.container img{
+    height: 400px;
+    width: auto;
+}
+#contact{
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contact h1{
+    font-size: 3.5em;
+    text-align: center;
+}
+#contact a{
+    font-size: 30px;
+    text-decoration: none;
+}
+#contact a:hover{
+    text-decoration: underline;
+}
+@keyframes fadeIn {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}

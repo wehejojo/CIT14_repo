@@ -1,13 +1,67 @@
-body{
-    display: flex;
-    flex-direction: column;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-padding: 5rem;
+    font-family: 'Courier New', Courier, monospace;
 }
-#nav-bar{
+header{
+    padding: 30px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3d3d3d;
     position: fixed;
     top: 0;
+    width: 100vw;
 }
-@media (min-width: 1px){
-    html{
-        background-color: white;
-    }
+header *{
+    color: white;
+}
+.links li{
+    display: inline-block;
+    padding: 0 25px;
+}
+.links li a{
+    text-decoration: none;
+}
+.links li a:hover{
+    text-decoration: underline;
+}
+section:nth-of-type(1){
+    margin-top: 12.5vh;
+}
+section{
+    height: 90vh;
+    background-color: lightgrey;
+}
+#video-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#video-container img{
+    width: 40em;
+    margin-bottom: 30px;
+}
+#form-container{
+    display: grid;
+    place-items: center;
+}
+#form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 40%;
+    width: 40%;
+
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+form .form-divider{
+    margin: 10px;
 }
