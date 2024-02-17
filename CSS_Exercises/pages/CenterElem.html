@@ -102,11 +102,9 @@
         let afk = false;
 
         const events = [
-            "mousedown", "mouseup", "mousemove", "click", "dbclick",
-            "touchstart", "touchmove", "touchend",
-            "focus", "blur", "resize", "scroll",
-            "keydown", "keypress", "keyup"
-        ];
+            "mousedown", "mouseup", "mousemove", "click", "dbclick","touchstart", "touchmove", "touchend",
+            "focus", "blur", "resize", "scroll", "keydown", "keypress", "keyup"
+        ].forEach((e) => { document.addEventListener(events[i], resetAFKdetection); });
 
         function placeCenter(){
             draggable.style.top = "30%";
@@ -151,10 +149,6 @@
             document.removeEventListener("mousemove", move);
             resetAFKtimer();
         });
-
-        for(let i = 0; i < events.length; i++)
-            document.addEventListener(events[i], resetAFKdetection);
-
         resetAFKtimer();
         </script>
 </body>
